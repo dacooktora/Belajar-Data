@@ -70,8 +70,8 @@ export function TopicMastery({ data }: TopicMasteryProps) {
       <div className="flex items-center justify-between mb-4">
         <h4 className="font-semibold text-gray-900 dark:text-white">📚 Penguasaan Topik</h4>
         <Badge variant="secondary" size="sm">
-          {masteryData.filter(s => s.status !== 'not_started').length}/{masteryData.length} aktif
-        </Badge>
+  {masteryData.filter((s: any) => s.status !== 'not_started').length}/{masteryData.length} aktif
+</Badge>
       </div>
 
       <div className="space-y-4">
