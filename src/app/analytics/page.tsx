@@ -119,7 +119,7 @@ export default function AnalyticsPage() {
               timeframe={timeframe}
             />
             <QuizPerformance
-              data={analytics?.quiz}
+              data={analytics?.quiz as any}
             />
           </div>
 
