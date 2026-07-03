@@ -75,7 +75,7 @@ export function TopicMastery({ data }: TopicMasteryProps) {
       </div>
 
       <div className="space-y-4">
-        {masteryData.map((skill) => (
+        {masteryData.map((skill: any) => (
           <div key={skill.name} className="space-y-1">
             <div className="flex items-center justify-between text-sm">
               <div className="flex items-center gap-2">
