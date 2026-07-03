@@ -32,7 +32,7 @@ export interface UseLocalStorageReturn<T> {
  * setValue({ name: 'Jane' });
  * removeValue();
  */
-export function useLocalStorage<T>(
+export function useLocalStorage<T = any>(
   key: string,
   initialValue: T | null = null,
   options: UseLocalStorageOptions = {}
