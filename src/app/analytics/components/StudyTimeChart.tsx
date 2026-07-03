@@ -18,11 +18,12 @@ export function StudyTimeChart({ data, timeframe, detailed = false }: StudyTimeC
 
     switch (timeframe) {
       case 'daily':
-        return data.dailyDistribution.map((d) => ({
-          label: d.day,
-          value: d.hours,
-          percentage: d.percentage,
-        }));
+  return data.dailyDistribution.map((d) => ({
+    label: d.day,
+    value: d.hours,
+    percentage: d.percentage,
+    trend: 'stable', 
+  }));
       case 'weekly':
         return data.weeklyDistribution.map((w) => ({
           label: `Minggu ${w.week}`,
