@@ -858,3 +858,37 @@ export interface AnalyticsWebhookPayload {
     environment: string;
   };
 }
+
+export interface AnalyticsData {
+  studyTime: StudyTimeAnalytics;
+  completion: CompletionAnalytics;
+  quiz: QuizAnalytics;
+  skills: SkillAnalytics;
+  productivity: ProductivityAnalytics;
+  engagement: EngagementAnalytics;
+  retention: RetentionAnalytics;
+  comparative?: ComparativeAnalytics;
+  predictive?: PredictiveAnalytics;
+  insights: AnalyticsInsight[];
+  recommendations: {
+    type: 'topic' | 'resource' | 'practice' | 'review' | 'project';
+    title: string;
+    description: string;
+    urgency: 'low' | 'medium' | 'high' | 'critical';
+    reason: string;
+    action: { label: string; onClick: () => void; href?: string };
+    tags: string[];
+  }[];
+  predictions: {
+    estimatedCompletionDate: string;
+    remainingHours: number;
+    dailyAverageNeeded: number;
+    weeklyAverageNeeded: number;
+    confidenceLevel: number;
+    scenarios: {
+      scenario: 'optimistic' | 'realistic' | 'pessimistic';
+      completionDate: string;
+      dailyHoursNeeded: number;
+    }[];
+  };
+}
