@@ -8,7 +8,7 @@ import { ProgressBar } from '@/components/ui/ProgressBar';
 import { AnalyticsData } from '@/lib/types/analytics.types';
 
 interface TopicMasteryProps {
-  data: AnalyticsData['skills'] | undefined;
+  data?: any;
 }
 
 export function TopicMastery({ data }: TopicMasteryProps) {
