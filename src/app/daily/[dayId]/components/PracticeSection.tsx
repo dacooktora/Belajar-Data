@@ -116,7 +116,7 @@ export function PracticeSection({
                 <div className="p-3 bg-blue-50 dark:bg-blue-950/30 rounded-lg border border-blue-200 dark:border-blue-800">
                   <h5 className="text-sm font-medium text-blue-800 dark:text-blue-300">💡 Tips</h5>
                   <ul className="list-disc list-inside text-sm text-blue-600 dark:text-blue-400">
-                    {practice.tips.map((tip, idx) => (
+                    {practice.tips.split('\n').map((tip: string, idx: number) => (
                       <li key={idx}>{tip}</li>
                     ))}
                   </ul>
@@ -127,8 +127,8 @@ export function PracticeSection({
                 <div className="p-3 bg-red-50 dark:bg-red-950/30 rounded-lg border border-red-200 dark:border-red-800">
                   <h5 className="text-sm font-medium text-red-800 dark:text-red-300">⚠️ Kesalahan Umum</h5>
                   <ul className="list-disc list-inside text-sm text-red-600 dark:text-red-400">
-                    {practice.commonMistakes.map((mistake, idx) => (
-                      <li key={idx}>{mistake}</li>
+                    {practice.commonMistakes.split('\n').map((mistake: string, idx: number) => (
+                    <li key={idx}>{mistake}</li>
                     ))}
                   </ul>
                 </div>
