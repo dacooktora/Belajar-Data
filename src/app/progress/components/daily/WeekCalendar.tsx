@@ -87,4 +87,68 @@ export function WeekCalendar({ dayId, progress }: WeekCalendarProps) {
       </div>
 
       <div className="grid grid-cols-7 gap-2">
-        {['Sen', 'Sel', 'Rab', 'Kam', 'J
+        {['Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab', 'Min'].map((day) => (
+          <div key={day} className="text-center text-xs font-medium text-gray-500 dark:text-gray-400">
+            {day}
+          </div>
+        ))}
+        {weekDays.map((day) => {
+          const status = getDayStatus(day);
+          const completion = getDayCompletion(day);
+          const isCurrentDay = isToday(day);
+
+          return (
+            <Link
+              key={day}
+              href={`/daily/${day}`}
+              className={cn(
+                'relative flex flex-col items-center p-2 rounded-lg transition-all',
+                'hover:shadow-md hover:scale-105',
+                isCurrentDay && 'ring-2 ring-blue-500 ring-offset-2'
+              )}
+            >
+              <div
+                className={cn(
+                  'w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium transition-all',
+                  getStatusColor(status),
+                  completion > 0 && completion < 100 && 'ring-2 ring-blue-300'
+                )}
+              >
+                {getDayLabel(day)}
+              </div>
+              <div className="text-xs mt-0.5">
+                {getStatusLabel(status)}
+              </div>
+              {completion > 0 && (
+                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-blue-500" />
+              )}
+            </Link>
+          );
+        })}
+      </div>
+
+      <div className="mt-3 flex flex-wrap gap-3 justify-center text-xs text-gray-500 dark:text-gray-400">
+        <div className="flex items-center gap-1">
+          <span className="w-3 h-3 rounded-full bg-green-500" />
+          <span>Selesai</span>
+        </div>
+        <div className="flex items-center gap-1">
+          <span className="w-3 h-3 rounded-full bg-blue-500" />
+          <span>Berjalan</span>
+        </div>
+        <div className="flex items-center gap-1">
+          <span className="w-3 h-3 rounded-full bg-purple-500" />
+          <span>Review</span>
+        </div>
+        <div className="flex items-center gap-1">
+          <span className="w-3 h-3 rounded-full bg-yellow-500" />
+          <span>Dilewati</span>
+        </div>
+        <div className="flex items-center gap-1">
+          <span className="w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-700" />
+          <span>Belum</span>
+        </div>
+      </div>
+    </Card>
+  );
+}
