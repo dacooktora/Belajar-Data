@@ -1,0 +1,12 @@
+# src/app/robots.txt
+User-Agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://data-analyst-learning.vercel.app/sitemap.xml
+
+# Disallow admin & auth pages
+Disallow: /login
+Disallow: /register
+Disallow: /admin
+Disallow: /api/
