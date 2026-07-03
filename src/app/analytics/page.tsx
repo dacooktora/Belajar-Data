@@ -115,7 +115,7 @@ export default function AnalyticsPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <ProductivityHeatmap
-              data={analytics?.productivity}
+              data={analytics?.productivity as any}
               timeframe={timeframe}
             />
             <QuizPerformance
