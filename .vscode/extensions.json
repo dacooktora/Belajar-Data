@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "ms-vscode.vscode-typescript-next",
+    "formulahendry.auto-rename-tag",
+    "formulahendry.auto-close-tag",
+    "pkief.material-icon-theme",
+    "bradlc.vscode-tailwindcss",
+    "naumovs.color-highlight",
+    "eamodio.gitlens",
+    "wayou.vscode-todo-highlight",
+    "streetsidesoftware.code-spell-checker",
+    "streetsidesoftware.code-spell-checker-indonesian"
+  ]
+}
