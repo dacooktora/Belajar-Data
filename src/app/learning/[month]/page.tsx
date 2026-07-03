@@ -158,7 +158,7 @@ const isLocked = day.day > 1 && prevDay?.status !== 'completed';
                         completedSessions={Math.round(day.progress / 100 * 8)}
                         totalHours={10}
                         completedHours={Math.round(day.progress / 100 * 10)}
-                        topics={monthData.weeks?.[currentWeekData.week - 1]?.days?.[0]?.subtopics?.map((s: any) => s.name) || []}
+                        topics={monthData.weeks?.[currentWeekData.week - 1]?.days?.[0]?.schedule?.sessions?.flatMap((s: any) => s.subtopics?.map((sub: any) => sub.name)) || []}
                         className={isToday ? 'ring-2 ring-blue-500 ring-offset-2' : ''}
                       />
                     </Link>
