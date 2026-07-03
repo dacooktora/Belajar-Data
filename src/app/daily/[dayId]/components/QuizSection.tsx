@@ -284,7 +284,7 @@ export function QuizSection({
             ⏱️ {timeRemaining}s
           </div>
           <ProgressBar
-            value={(quiz.timeLimit - timeRemaining) / quiz.timeLimit * 100}
+            value={((quiz?.timeLimit || 30) - timeRemaining) / (quiz?.timeLimit || 30) * 100}
             max={100}
             size="xs"
             color={timeRemaining < 10 ? 'red' : 'blue'}
