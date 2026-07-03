@@ -32,7 +32,6 @@
     "export": "next export",
     "preview": "npm run build && npm run start",
     "prepare": "husky install",
-    "postinstall": "prisma generate",
     "prisma:push": "prisma db push",
     "prisma:generate": "prisma generate",
     "prisma:studio": "prisma studio"
@@ -56,9 +55,6 @@
     "react-hot-toast": "^2.4.1",
     "react-hook-form": "^7.53.0",
     "@hookform/resolvers": "^3.9.0",
-
-    "prisma": "^5.18.0",
-    "@prisma/client": "^5.18.0",
 
     "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^9.0.2",
