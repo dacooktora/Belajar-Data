@@ -11,15 +11,27 @@ import { Input } from '@/components/ui/Input';
 import { Alert } from '@/components/ui/Alert';
 import { useLocalStorage } from '@/lib/hooks/useLocalStorage';
 
+type Session = {
+  user: {
+    name: string;
+    email: string;
+  };
+  token: string;
+};
+
 export default function RegisterPage() {
   const router = useRouter();
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-const { setValue: setSession } = useLocalStorage('session', null);
+
+  const { setValue: setSession } =
+    useLocalStorage<Session>('session', null);
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
