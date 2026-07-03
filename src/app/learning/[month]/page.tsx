@@ -136,8 +136,9 @@ export default function MonthPage({ params }: MonthPageProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {currentWeekData.days.map((day) => {
                 const isToday = isCurrentMonth && day.day === currentDayId - (month - 1) * 30;
-                const isLocked = day.day > 1 && !monthProgress.find(d => d.day === day.day - 1)?.status === 'completed';
-
+                const prevDay = monthProgress.find(d => d.day === day.day - 1);
+const isLocked = day.day > 1 && prevDay?.status !== 'completed';
+            
                 return (
                   <motion.div
                     key={day.day}
