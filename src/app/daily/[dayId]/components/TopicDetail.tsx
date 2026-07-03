@@ -77,10 +77,10 @@ export function TopicDetail({
               variant="secondary"
               size="xs"
               className={
-                subtopic.difficulty === 'beginner' ? 'bg-green-100 text-green-800' :
-                subtopic.difficulty === 'intermediate' ? 'bg-yellow-100 text-yellow-800' :
-                subtopic.difficulty === 'advanced' ? 'bg-orange-100 text-orange-800' :
-                'bg-red-100 text-red-800'
+                subtopic.difficulty === 'pemula' ? 'bg-green-100 text-green-800' :
+subtopic.difficulty === 'menengah' ? 'bg-yellow-100 text-yellow-800' :
+subtopic.difficulty === 'lanjutan' ? 'bg-orange-100 text-orange-800' :
+'bg-red-100 text-red-800'
               }
             >
               {subtopic.difficulty || 'Pemula'}
