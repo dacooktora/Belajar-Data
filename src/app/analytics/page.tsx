@@ -87,7 +87,7 @@ export default function AnalyticsPage() {
               label="Konsistensi"
               value={summaryStats?.consistencyScore.toFixed(1) + '%' || '0%'}
               icon={<span className="text-2xl">🔥</span>}
-              color="orange"
+              color="red"
             />
             <StatsCard
               label="Produktivitas"
@@ -99,7 +99,7 @@ export default function AnalyticsPage() {
               label="Fokus"
               value={summaryStats?.focusScore.toFixed(1) + '%' || '0%'}
               icon={<span className="text-2xl">🧠</span>}
-              color="indigo"
+              color="yellow"
             />
           </div>
 
