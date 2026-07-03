@@ -142,7 +142,7 @@ export function HourlyProgress({
                 value={(hour.minutesStudied / hour.minutesPlanned) * 100}
                 max={100}
                 size="xs"
-                color={hour.status === 'completed' ? 'green' : hour.status === 'in_progress' ? 'blue' : 'gray'}
+                color={hour.status === 'completed' ? 'green' : hour.status === 'in_progress' ? 'blue' : 'yellow'}
                 showPercentage={false}
                 className="mt-2"
               />
