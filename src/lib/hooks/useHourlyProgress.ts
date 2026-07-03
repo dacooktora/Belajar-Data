@@ -642,7 +642,7 @@ export function useHourlyProgress(options: UseHourlyProgressOptions = {}): UseHo
     return timerRef.current.elapsedSeconds;
   }, []);
 
-  const dayProgress = useMemo(() => {
+  const dayCompletion = useMemo(() => {
     if (!hourlyProgress) return 0;
     const total = hourlyProgress.hours.filter((h) => !h.isBreak).length;
     const completed = hourlyProgress.hours.filter((h) => !h.isBreak && h.status === 'completed').length;
