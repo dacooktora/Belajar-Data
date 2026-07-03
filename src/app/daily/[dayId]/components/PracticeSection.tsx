@@ -106,8 +106,8 @@ export function PracticeSection({
               <div className="p-3 bg-gray-50 dark:bg-gray-900/50 rounded-lg">
                 <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">📋 Instruksi</h5>
                 <ol className="list-decimal list-inside text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                  {practice.instructions.map((instruction, idx) => (
-                    <li key={idx}>{instruction}</li>
+                  {practice.instructions.split('\n').map((instruction: string, idx: number) => (
+                  <li key={idx}>{instruction}</li>
                   ))}
                 </ol>
               </div>
