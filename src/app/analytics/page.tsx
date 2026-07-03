@@ -346,8 +346,8 @@ export default function AnalyticsPage() {
       label: '💡 Insights',
       content: (
         <div className="space-y-6">
-          <InsightList insights={analytics?.insights || []} detailed />
-          <RecommendationList recommendations={analytics?.recommendations || []} detailed />
+          <InsightList insights={analytics?.insights as any || []} detailed />
+          <RecommendationList recommendations={analytics?.recommendations as any || []} detailed />
           {analytics?.predictions && (
             <Card variant="elevated" padding="lg">
               <h4 className="font-semibold text-gray-900 dark:text-white mb-4">
