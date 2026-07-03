@@ -4,7 +4,8 @@ import { useMemo } from 'react';
 import { cn } from '@/lib/utils/helpers';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
-import { AnalyticsData, AnalyticsTimeframe } from '@/lib/types/analytics.types';
+import { AnalyticsTimeframe } from '@/lib/types/analytics.types';
+import type { AnalyticsData } from '@/lib/hooks/useAnalytics';
 
 interface StudyTimeChartProps {
   data: AnalyticsData['studyTime'] | undefined;
