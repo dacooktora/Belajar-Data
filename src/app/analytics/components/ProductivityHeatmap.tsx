@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/Badge';
 import { AnalyticsData, AnalyticsTimeframe } from '@/lib/types/analytics.types';
 
 interface ProductivityHeatmapProps {
-  data: AnalyticsData['productivity'] | undefined;
+  data: Partial<AnalyticsData['productivity']> | undefined;
   timeframe: AnalyticsTimeframe;
 }
 
