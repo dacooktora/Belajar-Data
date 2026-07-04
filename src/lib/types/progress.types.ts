@@ -836,3 +836,10 @@ export interface ProgressAnalyticsData {
     impact?: string;
   }[];
 }
+export interface ProgressData {
+  daily: Record<number, DailyProgress>;
+  monthly: Record<number, MonthlyProgress>;
+  weekly: Record<number, WeeklyProgress>;
+  statistics: UserStatistics;
+  lastUpdated: string;
+}
