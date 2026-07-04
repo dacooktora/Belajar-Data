@@ -84,7 +84,7 @@ export function HourlyTracker({ dayId, dayProgress }: HourlyTrackerProps) {
                   value={progress}
                   max={100}
                   size="sm"
-                  color={status === 'completed' ? 'green' : status === 'in_progress' ? 'blue' : 'gray'}
+                  color={status === 'completed' ? 'green' : status === 'in_progress' ? 'blue' : 'yellow'}
                   showPercentage={false}
                 />
               </div>
