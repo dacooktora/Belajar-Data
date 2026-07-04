@@ -47,8 +47,8 @@ export default function LearningPage() {
       else {
         const prevMonth = ROADMAP_DATA[monthNumber - 2];
         if (prevMonth) {
-          const prevProgress = progress?.daily ? Object.values(progress.daily).filter(d => d.month === monthNumber - 1) : [];
-          const prevCompleted = prevProgress.filter(d => d.status === 'completed').length;
+          const prevProgress = progress?.daily ? Object.values(progress.daily).filter((d: any) => d.month === monthNumber - 1) : [];
+          const prevCompleted = prevProgress.filter((d: any) => d.status === 'completed').length;
           if (prevCompleted >= 30) status = 'not_started';
           else status = 'locked';
         } else {
@@ -89,13 +89,13 @@ export default function LearningPage() {
     // Sort
     switch (sortBy) {
       case 'progress':
-        filtered.sort((a, b) => b.progress - a.progress);
+        filtered.sort((a: any, b: any) => a.progress - b.progress);
         break;
       case 'title':
-        filtered.sort((a, b) => a.title.localeCompare(b.title));
+        filtered.sort((a: any, b: any) => a.title.localeCompare(b.title));
         break;
       default:
-        filtered.sort((a, b) => a.month - b.month);
+        filtered.sort((a: any, b: any) => a.month - b.month);
         break;
     }
 
@@ -105,8 +105,8 @@ export default function LearningPage() {
   const totalMonths = ROADMAP_DATA.length;
   const completedMonths = months.filter(m => m.status === 'completed').length;
   const inProgressMonths = months.filter(m => m.status === 'in_progress').length;
-  const averageProgress = months.length > 0 ? months.reduce((sum, m) => sum + m.progress, 0) / months.length : 0;
-
+const averageProgress = months.length > 0 ? months.reduce((sum: number, m: any) => sum + m.progress, 0) / months.length : 0;
+  
   return (
     <div className="min-h-screen py-8">
       <div className="container-custom">
