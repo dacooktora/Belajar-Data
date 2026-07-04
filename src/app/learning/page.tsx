@@ -35,8 +35,8 @@ export default function LearningPage() {
   const months = useMemo(() => {
     let filtered = ROADMAP_DATA.map((month, index) => {
       const monthNumber = index + 1;
-      const monthProgress = progress?.daily ? Object.values(progress.daily).filter(d => d.month === monthNumber) : [];
-      const completedDays = monthProgress.filter(d => d.status === 'completed').length;
+      const monthProgress = progress?.daily ? Object.values(progress.daily).filter((d: any) => d.month === monthNumber) : [];
+      const completedDays = monthProgress.filter((d: any) => d.status === 'completed').length;
       const totalDays = 30;
       const progressPercentage = totalDays > 0 ? (completedDays / totalDays) * 100 : 0;
 
