@@ -167,13 +167,13 @@ export function OverallProgress({ progress }: OverallProgressProps) {
         <div className="p-2 bg-gray-50 dark:bg-gray-900/50 rounded-lg text-center">
           <span className="text-xs text-gray-500 dark:text-gray-400">Tugas Dikirim</span>
           <div className="font-semibold text-gray-900 dark:text-white">
-            {Math.round(stats.assignmentsPercentage)}%
+            {Math.round(stats.practicesPercentage || 0)}%
           </div>
         </div>
         <div className="p-2 bg-gray-50 dark:bg-gray-900/50 rounded-lg text-center">
           <span className="text-xs text-gray-500 dark:text-gray-400">Praktik</span>
           <div className="font-semibold text-gray-900 dark:text-white">
-            {Math.round(stats.practicesPercentage)}%
+            {Math.round(stats.practicesPercentage || 0)}%
           </div>
         </div>
       </div>
@@ -181,7 +181,7 @@ export function OverallProgress({ progress }: OverallProgressProps) {
       <div className="mt-4">
         <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Progress per Bulan</h4>
         <div className="space-y-2">
-          {monthProgress.map((m) => (
+          {monthProgress.map((m: any) => (
             <div key={m.month} className="flex items-center gap-3">
               <div className="flex-shrink-0 w-16 text-xs text-gray-500 dark:text-gray-400">
                 Bulan {m.month}
@@ -189,11 +189,11 @@ export function OverallProgress({ progress }: OverallProgressProps) {
               <div className="flex-1 h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-500"
-                  style={{ width: `${Math.min(m.percentage, 100)}%` }}
+                   style={{ width: `${Math.min(m.percentage || 0, 100)}%` }}
                 />
               </div>
               <div className="flex-shrink-0 w-12 text-right text-xs font-medium text-gray-700 dark:text-gray-300">
-                {Math.round(m.percentage)}%
+                {Math.round(m.percentage || 0)}%
               </div>
               <div className="flex-shrink-0 w-12 text-right text-xs text-gray-400">
                 {m.completed}/{m.total}
