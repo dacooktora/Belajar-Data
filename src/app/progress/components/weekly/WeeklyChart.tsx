@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import { Card } from '@/components/ui/Card';
 import { ProgressData } from '@/lib/types';
 import { getDayId, getMonthFromDayId } from '@/lib/utils/helpers';
+import { cn } from '@/lib/utils/helpers'; // ← TAMBAHKAN
 
 interface WeeklyChartProps {
   week: number;
@@ -36,7 +37,7 @@ export function WeeklyChart({ week, progress }: WeeklyChartProps) {
     return data;
   }, [week, progress]);
 
-  const maxHours = Math.max(...chartData.map(d => d.hours), 1);
+  const maxHours = Math.max(...chartData.map((d: any) => d.hours), 1);
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -55,7 +56,7 @@ export function WeeklyChart({ week, progress }: WeeklyChartProps) {
       </h3>
 
       <div className="space-y-3">
-        {chartData.map((item) => (
+      {chartData.map((item: any) => (
           <div key={item.day} className="flex items-center gap-3">
             <div className="flex-shrink-0 w-12 text-xs text-gray-500 dark:text-gray-400">
               {item.label}
