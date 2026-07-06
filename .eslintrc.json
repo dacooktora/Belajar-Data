@@ -112,8 +112,9 @@
     // TAILWIND
     // ============================================
     "tailwindcss/no-custom-classname": "off",
-    "tailwindcss/classnames-order": "warn",
-    "tailwindcss/no-contradicting-classname": "off",
+"tailwindcss/classnames-order": "off",
+"tailwindcss/no-contradicting-classname": "off",
+"tailwindcss/enforces-negative-arbitrary-values": "off",
 
     // ============================================
     // NEXT.JS
