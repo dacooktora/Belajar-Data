@@ -35,8 +35,8 @@ export function MonthlyStats({ month, progress }: MonthlyStatsProps) {
         totalMinutes += dayProgress.totalMinutesStudied || 0;
 
         totalSubtopics += dayProgress.subtopics?.length || 0;
-        completedSubtopics += dayProgress.subtopics?.filter(s => s.status === 'mastered' || s.status === 'understood').length || 0;
-
+        completedSubtopics += dayProgress.subtopics?.filter((s: any) => s.status === 'mastered' || s.status === 'understood').length || 0;
+        
         if (dayProgress.quiz?.quizId) {
           totalQuizzes++;
           if (dayProgress.quiz.status !== 'not_started') {
@@ -47,7 +47,8 @@ export function MonthlyStats({ month, progress }: MonthlyStatsProps) {
         }
 
         totalPractices += dayProgress.practice?.length || 0;
-        practicesCompleted += dayProgress.practice?.filter(p => p.status === 'completed').length || 0;
+        practicesCompleted += dayProgress.practice?.filter((p: any) => p.status === 'completed').length || 0;
+        
 
         if (dayProgress.assignment?.assignmentId) {
           totalAssignments++;
