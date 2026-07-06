@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/Button';
 import { Checkbox } from '@/components/ui/Checkbox';
 import { Input } from '@/components/ui/Input';
 import { ProgressData } from '@/lib/types';
+import { cn } from '@/lib/utils/helpers'; // ← TAMBAHKAN
 
 interface WeeklyGoalsProps {
   week: number;
@@ -34,7 +35,7 @@ export function WeeklyGoals({ week, progress }: WeeklyGoalsProps) {
       if (dayProgress?.status === 'completed') completedDays++;
       totalMinutes += dayProgress?.totalMinutesStudied || 0;
       totalSubtopics += dayProgress?.subtopics?.length || 0;
-      completedSubtopics += dayProgress?.subtopics?.filter(s => s.status === 'mastered' || s.status === 'understood').length || 0;
+       completedSubtopics += dayProgress?.subtopics?.filter((s: any) => s.status === 'mastered' || s.status === 'understood').length || 0;
     }
 
     return {
@@ -63,7 +64,7 @@ export function WeeklyGoals({ week, progress }: WeeklyGoalsProps) {
   };
 
   const handleDeleteGoal = (index: number) => {
-    setGoals(goals.filter((_, i) => i !== index));
+    setGoals(goals.filter((_: string, i: number) => i !== index));
     const newCompleted = new Set(completedGoals);
     newCompleted.delete(index);
     setCompletedGoals(newCompleted);
@@ -83,8 +84,8 @@ export function WeeklyGoals({ week, progress }: WeeklyGoalsProps) {
       </div>
 
       <div className="space-y-3">
-        {goals.map((goal, index) => (
-          <div key={index} className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900/50 rounded-lg">
+        {goals.map((goal: string, index: number) => (
+        <div key={index} className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900/50 rounded-lg">
             <Checkbox
               checked={completedGoals.has(index)}
               onChange={() => handleToggleGoal(index)}
