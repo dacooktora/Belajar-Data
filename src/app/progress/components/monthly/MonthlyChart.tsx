@@ -3,6 +3,7 @@
 import { useMemo } from 'react';
 import { Card } from '@/components/ui/Card';
 import { ProgressData } from '@/lib/types';
+import { cn } from '@/lib/utils/helpers';
 
 interface MonthlyChartProps {
   month: number;
