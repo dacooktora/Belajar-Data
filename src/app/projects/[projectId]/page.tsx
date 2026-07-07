@@ -32,8 +32,8 @@ export default function ProjectDetailPage() {
   const projectProgress = useMemo(() => {
     if (!progress || !project) return null;
     const dayId = getDayId(project.month, 1, 1);
-    const dayProgress = progress.daily[dayId];
-    return dayProgress?.project || null;
+const dayProgress = progress.daily[dayId];
+return (dayProgress as any)?.project || null;
   }, [progress, project]);
 
   useEffect(() => {
