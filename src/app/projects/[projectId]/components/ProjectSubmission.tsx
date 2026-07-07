@@ -75,7 +75,7 @@ progress?.deliverables?.map((d: any) => ({
   name: f.name,
   fileUrl: f.url,
   fileSize: f.size,
-})),
+})) as any,
       submittedAt: new Date().toISOString(),
     });
     setTimeout(() => setIsSubmitting(false), 500);
@@ -92,7 +92,7 @@ deliverables: files.map((f: any) => ({
   name: f.name,
   fileUrl: f.url,
   fileSize: f.size,
-})),
+})) as any,
     });
   };
 
