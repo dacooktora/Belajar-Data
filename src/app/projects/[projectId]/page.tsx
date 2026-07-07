@@ -68,7 +68,7 @@ return (dayProgress as any)?.project || null;
                 ...projectProgress,
                 ...data,
               },
-            });
+            } as any);
           }}
         />
       ),
@@ -90,7 +90,7 @@ return (dayProgress as any)?.project || null;
                 status: 'submitted',
            
               },
-            });
+            } as any);
           }}
           onSaveDraft={(data) => {
             const dayId = getDayId(project.month, 1, 1);
@@ -100,7 +100,7 @@ return (dayProgress as any)?.project || null;
                 ...data,
                 status: 'planning',
               },
-            });
+            } as any);
           }}
         />
       ),
@@ -120,7 +120,7 @@ return (dayProgress as any)?.project || null;
                 ...projectProgress,
                 status: 'revision_needed',
               },
-            });
+            } as any);
           }}
         />
       ),
