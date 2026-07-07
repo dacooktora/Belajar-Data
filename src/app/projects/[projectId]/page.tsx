@@ -88,7 +88,7 @@ return (dayProgress as any)?.project || null;
                 ...projectProgress,
                 ...data,
                 status: 'submitted',
-                submittedAt: new Date().toISOString(),
+           
               },
             });
           }}
