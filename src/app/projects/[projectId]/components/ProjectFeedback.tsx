@@ -99,13 +99,13 @@ export function ProjectFeedback({
         </Card>
       )}
 
-      {progress.rubricScores && progress.rubricScores.length > 0 && (
+        {(progress as any).rubricScores && (progress as any).rubricScores.length > 0 && (
         <Card variant="default" padding="lg">
           <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
             📋 Rubrik Penilaian
           </h4>
           <div className="space-y-3">
-            {progress.rubricScores.map((item) => (
+                {(progress as any).rubricScores.map((item: any) => (
               <div key={item.criterion} className="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-900/50 rounded-lg">
                 <span className="text-sm text-gray-700 dark:text-gray-300">
                   {item.criterion}
